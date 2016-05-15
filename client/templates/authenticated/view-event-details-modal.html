@@ -1,0 +1,21 @@
+<template name="viewEventDetailsModal">
+  <div class="modal fade" id="view-event-details-modal" tabindex="-1" role="dialog" aria-labelledby="view-event-details-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="view-event-details-modal">{{event.title}}</h3>
+        </div>
+        <div class="modal-body">
+          <p>{{event.guests}} Summerfuel students will be attending</p>
+          <p>It starts at {{start}}</p>
+          <p>It ends at {{end}}</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success">Coming!</button>
+          <button class="btn btn-primary">Maybe!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
