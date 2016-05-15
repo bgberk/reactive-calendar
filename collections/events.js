@@ -25,10 +25,18 @@ let EventsSchema = new SimpleSchema({
 		type: String,
 		label: 'When this event ends'
 	},
+	'location': {
+		type: String,
+		label: 'Where this event takes place'
+	},
+	'description': {
+		type: String,
+		label: 'Short description of event'
+	},
 	'type': {
 		type: String,
 		label: 'What type of event is this?',
-		allowedValues: [ 'Birthday', 'Corporate', 'Wedding', 'Miscellaneous']
+		allowedValues: [ 'Activity', 'Academic', 'Trip', 'Meeting']
 	},
 	'guests': {
 		type: Number,

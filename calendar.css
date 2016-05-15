@@ -40,18 +40,18 @@ p[class^="type-"] {
   margin: 0;
 }
 
-p[class="type-Corporate"] {
+p[class="type-Activity"] {
   color: #ff4c32;
 }
 
-p[class="type-Wedding"] {
+p[class="type-Academic"] {
   color: #ffb800;
 }
 
-p[class="type-Birthday"] {
+p[class="type-Trip"] {
   color: #1bbcc4;
 }
 
-p[class="type-Miscellaneous"] {
+p[class="type-Meeting"] {
   color: #00c16b;
 }

@@ -18,8 +18,6 @@ Template.calendar.onRendered( () => {
 
     fixedWeekCount: false,
 
-    editable: true,
-
     events(start, end, timezone, callback) {
   		let data = Events.find().fetch().map( (event) => {
   			event.editable = !isPast( event.start );
@@ -46,7 +44,7 @@ Template.calendar.onRendered( () => {
         let update = {
           _id: event._id,
           start: date,
-          end: event.end.format()
+          end: date
         };
 
         Meteor.call( 'editEvent', update, ( error ) => {
@@ -60,19 +58,8 @@ Template.calendar.onRendered( () => {
       }
     },
 
-    eventResize( event, delta, revert) {
-      let update = {
-        _id: event._id,
-        start: event.start.format(),
-        end: event.end.format()
-      };
-
-      Meteor.call( 'editEvent', update);
-      Bert.alert( 'Event updated to end at '+ event.end.format() + '!', 'success')
-      },
-
   	dayClick( date, jsEvent, view ) {
-      if(view.name == 'month') {
+      if (view.name == "month") {
         Session.set('eventModal', {type: 'add', start: date.format(), end: date.format() });
         $( '#add-edit-event-modal').modal('show');
       } else {
