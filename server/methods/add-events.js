@@ -4,6 +4,8 @@ Meteor.methods({
       title: String,
       start: String,
       end: String,
+      location: String,
+      description: String,
       type: String,
       guests: Number
     });

@@ -5,13 +5,16 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h3 class="modal-title" id="view-event-details-modal">{{event.title}}</h3>
+          <span class="label label-primary">{{event.type}}</span>
         </div>
         <div class="modal-body">
-          <p>{{event.guests}} Summerfuel students will be attending</p>
-          <p>It starts at {{event.start}}</p>
-          <p>It ends at {{event.end}}</p>
+          <strong>Starts: </strong>{{event.start}}<br>
+          <strong>Ends: </strong>{{event.end}}<br>
+          <strong>Where: </strong>{{event.location}}<br>
+          <strong>Description: </strong>{{event.description}}<br>          
         </div>
         <div class="modal-footer">
+          <small class="pull-left">{{event.guests}} Summerfuel students will be attending</small>
           <button class="btn btn-success">Coming!</button>
           <button class="btn btn-primary">Maybe!</button>
         </div>
