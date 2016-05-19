@@ -34,7 +34,7 @@ Template.calendar.onRendered( () => {
   	eventRender( event, element ) {
   		element.find( '.fc-content' ).html(
   			`<h4>${ event.title }</h4>
-  			<p class="guest-count">${ event.guests } Guests</p>
+  			<p class="guest-count">${ event.confirmed } Confirmed</p>
   			<p class="type-${ event.type }">#${ event.type }</p>
   			`
   		);

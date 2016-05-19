@@ -7,7 +7,9 @@ Meteor.methods({
       location: String,
       description: String,
       type: String,
-      guests: Number
+      confirmed: Number,
+      interested: Number,
+      attending: [String]
     });
 
     try {

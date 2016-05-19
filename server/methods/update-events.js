@@ -5,8 +5,11 @@ Meteor.methods({
       title: Match.Optional( String ),
       start: String,
       end: String,
+      location: Match.Optional( String ),
+      description: Match.Optional( String ),
       type: Match.Optional( String ),
-      guests: Match.Optional( Number )
+      confirmed: Match.Optional( Number ),
+      interested: Match.Optional( Number )
     });
 
     try {

@@ -1,4 +1,24 @@
 /* CSS declarations go here */
+@font-face {
+    font-family: Funkydori;
+    src: url(/Funkydori.ttf);
+}
+
+@font-face {
+  font-family: DINRoundWeb;
+  src: url(/DINRoundWeb.woff);
+}
+
+body {
+  font-family: 'DINRoundWeb';
+}
+
+h2 {
+  color: #1bbcc4;
+  font-family: 'Funkydori';
+  font-size: 5rem;
+}
+
 .fc-event-container {
   padding: 5px !important;
 }

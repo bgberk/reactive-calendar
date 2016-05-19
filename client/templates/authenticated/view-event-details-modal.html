@@ -1,4 +1,5 @@
 <template name="viewEventDetailsModal">
+  {{#if Template.subscriptionsReady}}
   <div class="modal fade" id="view-event-details-modal" tabindex="-1" role="dialog" aria-labelledby="view-event-details-modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -11,14 +12,15 @@
           <strong>Starts: </strong>{{event.start}}<br>
           <strong>Ends: </strong>{{event.end}}<br>
           <strong>Where: </strong>{{event.location}}<br>
-          <strong>Description: </strong>{{event.description}}<br>          
+          <strong>Description: </strong>{{event.description}}<br>
         </div>
         <div class="modal-footer">
-          <small class="pull-left">{{event.guests}} Summerfuel students will be attending</small>
-          <button class="btn btn-success">Coming!</button>
-          <button class="btn btn-primary">Maybe!</button>
+          <small class="pull-left">{{event.confirmed}} confirmed, {{event.interested}} interested</small>
+          <button class="btn {{isConfirmed}}">Coming!</button>
+          <button class="btn btn-primary interested">Maybe!</button>
         </div>
       </div>
     </div>
   </div>
+  {{/if}}
 </template>

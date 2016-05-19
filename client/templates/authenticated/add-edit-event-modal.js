@@ -50,7 +50,9 @@ Template.addEditEventModal.events({
           location: template.find( '[name="location"]' ).value,
           description: template.find( '[name="description"]' ).value,
           type: template.find( '[name="type"] option:selected' ).value,
-          guests: parseInt( template.find( '[name="guests"]' ).value, 10 )
+          confirmed: 0,
+          interested: 0,
+          attending: ['test']
         };
 
     if ( submitType === 'editEvent' ) {

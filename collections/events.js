@@ -38,9 +38,17 @@ let EventsSchema = new SimpleSchema({
 		label: 'What type of event is this?',
 		allowedValues: [ 'Activity', 'Academic', 'Trip', 'Meeting']
 	},
-	'guests': {
+	'confirmed': {
 		type: Number,
-		label: 'How many guests are expected'
+		label: 'How many are confirmed'
+	},
+	'interested': {
+		type: Number,
+		label: 'How many are interested'
+	},
+	'attending': {
+		type: [String],
+		label: 'Who is attending'
 	}
 });
 
