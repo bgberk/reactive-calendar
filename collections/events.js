@@ -42,9 +42,10 @@ let EventsSchema = new SimpleSchema({
 		type: Number,
 		label: 'How many are confirmed'
 	},
-	'interested': {
+	'max': {
 		type: Number,
-		label: 'How many are interested'
+		label: 'Maximum allowed',
+		optional: true
 	},
 	'attending': {
 		type: [String],

@@ -8,8 +8,8 @@ Meteor.methods({
       description: String,
       type: String,
       confirmed: Number,
-      interested: Number,
-      attending: [String]
+      attending: [String],
+      max: Match.Optional( Number )
     });
 
     try {

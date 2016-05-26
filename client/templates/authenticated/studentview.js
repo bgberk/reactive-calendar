@@ -4,12 +4,21 @@ Template.studentView.onCreated( () => {
 });
 
 Template.studentView.onRendered( () => {
+
   $( '#student-calendar' ).fullCalendar({
   	header: {
       left: 'title',
-      center: 'month, agendaWeek, agendaDay',
+      center: 'agendaWeek,agendaDay,list',
       right: 'prev, next'
     },
+
+    defaultView: 'list',
+
+    eventLimit: 2,
+
+    fixedWeekCount: false,
+
+    nowIndicator: true,
 
     events(start, end, timezone, callback) {
   		let data = Events.find().fetch().map( (event) => {
@@ -37,8 +46,11 @@ Template.studentView.onRendered( () => {
   	},
 
   	eventClick( event ) {
-  		Session.set('detailsModal', {event:event._id } );
-  		$( '#view-event-details-modal').modal('show');
+  	  Modal.show('viewEventDetailsModal', function() {
+        return Events.findOne(event._id);
+      });
+    /*	Session.set('detailsModal', {event:event._id } );
+  		$( '#view-event-details-modal').modal('show');*/
   	}
   });
 

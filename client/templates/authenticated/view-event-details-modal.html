@@ -1,26 +1,22 @@
 <template name="viewEventDetailsModal">
-  {{#if Template.subscriptionsReady}}
   <div class="modal fade" id="view-event-details-modal" tabindex="-1" role="dialog" aria-labelledby="view-event-details-modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3 class="modal-title" id="view-event-details-modal">{{event.title}}</h3>
-          <span class="label label-primary">{{event.type}}</span>
+          <h3 class="modal-title" id="view-event-details-modal">{{title}}</h3>
+          <span class="label label-primary">{{type}}</span>
         </div>
         <div class="modal-body">
-          <strong>Starts: </strong>{{event.start}}<br>
-          <strong>Ends: </strong>{{event.end}}<br>
-          <strong>Where: </strong>{{event.location}}<br>
-          <strong>Description: </strong>{{event.description}}<br>
+          <strong>Starts: </strong>{{startTime}}<br>
+          <strong>Ends: </strong>{{endTime}}<br>
+          <strong>Where: </strong>{{location}}<br>
+          <strong>Description: </strong>{{description}}<br>
         </div>
         <div class="modal-footer">
-          <small class="pull-left">{{event.confirmed}} confirmed, {{event.interested}} interested</small>
-          <button class="btn {{isConfirmed}}">Coming!</button>
-          <button class="btn btn-primary interested">Maybe!</button>
+          {{> guestDetails}}
         </div>
       </div>
     </div>
   </div>
-  {{/if}}
 </template>

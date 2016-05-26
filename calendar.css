@@ -14,9 +14,21 @@ body {
 }
 
 h2 {
-  color: #1bbcc4;
+  color: #25A2D9;
   font-family: 'Funkydori';
   font-size: 5rem;
+}
+
+.navbar.navbar-inverse {
+  border: none;
+}
+
+.navbar .navbar-brand {
+  padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+  height: 50px;
 }
 
 .fc-event-container {

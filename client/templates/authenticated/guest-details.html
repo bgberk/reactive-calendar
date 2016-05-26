@@ -1,0 +1,25 @@
+<template name="guestDetails">
+{{#if isActivity}}
+	{{#if isConfirmed}}
+		<small><a style="line-height: 34px" href="#" class="pull-left js-view-guests" data-toggle="popover">{{confirmed}} confirmed, including you!</a></small>
+	  <button class="btn btn-warning dropout">Drop out</button>
+	{{else}}
+		<small><a style="line-height: 34px" href="#" class="pull-left js-view-guests" data-toggle="popover">{{confirmed}} confirmed</a></small>
+		{{#if hasMax}}
+		<small style="line-height: 34px" class="pull-left">, {{maxLeft}} more left</small>
+		{{/if}}
+	  <button class="btn btn-success confirm">Coming!</button>
+		<small><input type="checkbox" value="">Save to my calendar</small>
+	{{/if}}
+{{else}}
+	<small><input type="checkbox" value="">Save to my calendar</small>
+{{/if}}
+
+	<div id='popover-content' class='hide'>
+		<ul>
+			{{#each attendingUsers}}
+			<li>{{this}}</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>

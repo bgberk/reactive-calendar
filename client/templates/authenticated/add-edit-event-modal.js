@@ -51,7 +51,7 @@ Template.addEditEventModal.events({
           description: template.find( '[name="description"]' ).value,
           type: template.find( '[name="type"] option:selected' ).value,
           confirmed: 0,
-          interested: 0,
+          max: parseInt( template.find( '[name="max"]' ).value, 10 ),
           attending: ['test']
         };
 

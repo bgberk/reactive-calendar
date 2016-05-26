@@ -11,11 +11,13 @@ Meteor.methods({
     }
   },
 
-  addInterested( event ) {
+  removeConfirmed( event ) {
+    userId = Meteor.userId();
     try {
-      return Events.update( event._id, {
-        $inc: {interested: 1}
-      });
+      return Events.update(event._id, 
+                          { $inc: {confirmed: -1},
+                            $pull: {attending: userId}}
+        );
     } catch ( exception ) {
       throw new Meteor.Error( '500', `${ exception }` );
     }

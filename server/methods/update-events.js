@@ -9,7 +9,6 @@ Meteor.methods({
       description: Match.Optional( String ),
       type: Match.Optional( String ),
       confirmed: Match.Optional( Number ),
-      interested: Match.Optional( Number )
     });
 
     try {
