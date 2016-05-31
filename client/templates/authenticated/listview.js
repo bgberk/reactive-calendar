@@ -70,7 +70,7 @@
             noDebug || console.log(events);
 
             var eventsCopy = events.slice().reverse(); //copy and reverse so we can modify while looping
-
+            
             var tbody = $('<tbody></tbody>');
 
             this.scrollerEl = this.el.addClass('fc-scroller');

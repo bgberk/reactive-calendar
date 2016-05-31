@@ -1,0 +1,11 @@
+<template name="messageContent">
+	<div class="panel {{readStatus}}">
+	<div class="panel-heading">
+		<strong>{{subject}}</strong><br>
+		<small>From: {{from}} at {{momentToHuman createdAt}}</small>
+	</div>
+	<div class="panel-body">
+		<p>{{body}}</p>
+	</div>
+	</div>
+</template>

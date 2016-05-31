@@ -8,7 +8,7 @@ Template.studentView.onRendered( () => {
   $( '#student-calendar' ).fullCalendar({
   	header: {
       left: 'title',
-      center: 'agendaWeek,agendaDay,list',
+      center: '',
       right: 'prev, next'
     },
 

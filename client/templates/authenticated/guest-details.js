@@ -1,17 +1,19 @@
 Template.guestDetails.onRendered(function(){
-	var content = Template.currentData();
-	if (content) {
-		var attendingUsers = content.attending;
-		attendingUsers.shift();
-		var string = attendingUsers.join("</br>");
-		this.$('.js-view-guests').popover({
-		  title: 'Who\'s coming?',
-		  content: string,
-		  trigger: 'hover focus',
-		  html: true,
-		  placement: 'bottom'
-		});
-	}; 
+	Tracker.autorun(function(){
+		var content = Template.currentData();
+		if (content) {
+			var attendingUsers = content.attending;
+			attendingUsers.shift();
+			var string = attendingUsers.join("</br>");
+			this.$('.js-view-guests').popover({
+			  title: 'Who\'s coming?',
+			  content: string,
+			  trigger: 'hover focus',
+			  html: true,
+			  placement: 'bottom'
+			});
+		};
+	})
 })
 
 Template.guestDetails.helpers({
@@ -58,10 +60,14 @@ Template.guestDetails.helpers({
 
 Template.guestDetails.events({
 	'click .confirm': function(event) {
-		Meteor.call('addConfirmed', this);
+		if (Meteor.user()) {
+			Meteor.call('addConfirmed', this);
+		}
 	},
 
 	'click .dropout': function(event) {
-		Meteor.call('removeConfirmed', this);
+		if (Meteor.user()) {
+			Meteor.call('removeConfirmed', this);
+		}
 	}
 })
