@@ -27,3 +27,4 @@ iron:router
 accounts-password
 accounts-ui
 peppelg:bootstrap-3-modal
+accounts-facebook

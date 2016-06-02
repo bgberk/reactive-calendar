@@ -1,6 +1,19 @@
 <template name="appLayout">
 	<div class="container">
+		<div class="page-header">
+			<div class="row">
+			  <div class="span4">{{> loginButtons}}</div>
+			  <div class="span4"><img class="center-block" style="width: 100px" src="logo.png" /></div>
+			  <div class="span4"></div>
+			</div>
+		</div>
 	{{> mobileNavbar}}
 	{{> yield}}
 	</div>
+	 <footer class="footer">
+	 <div class="container-fluid">
+	 	<br>
+	 	<p>&copy; Summerfuel 2016</p> 
+	 </div>
+	 </footer>
 </template>

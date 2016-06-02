@@ -1,19 +1,24 @@
 Template.guestDetails.onRendered(function(){
-	Tracker.autorun(function(){
-		var content = Template.currentData();
-		if (content) {
-			var attendingUsers = content.attending;
-			attendingUsers.shift();
-			var string = attendingUsers.join("</br>");
-			this.$('.js-view-guests').popover({
-			  title: 'Who\'s coming?',
-			  content: string,
-			  trigger: 'hover focus',
-			  html: true,
-			  placement: 'bottom'
-			});
-		};
-	})
+	var content = Template.currentData();
+	if (content) {
+		var attendingUsers = content.attending;
+		attendingUsers.shift();
+		var attendingNames = [];
+		$.each(attendingUsers, function(index, value){
+			let userObj = (Meteor.users.findOne({_id: value}));
+			if(userObj) {
+				attendingNames.push(userObj.profile.name)
+			}
+		});
+		var string = attendingNames.join("</br>");
+		this.$('.js-view-guests').popover({
+		  title: 'Who\'s coming?',
+		  content: string,
+		  trigger: 'hover focus',
+		  html: true,
+		  placement: 'bottom'
+		});
+	};
 })
 
 Template.guestDetails.helpers({

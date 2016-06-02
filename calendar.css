@@ -9,8 +9,14 @@
   src: url(/DINRoundWeb.woff);
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: 'DINRoundWeb';
+  margin-bottom: 60px;
 }
 
 h2 {
@@ -84,4 +90,13 @@ p[class="type-Meeting"] {
 
 .panel-heading:hover {
   cursor: pointer;
+}
+
+/* STICKY FOOTER */
+.footer {
+  background-color: #f5f5f5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
