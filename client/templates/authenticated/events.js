@@ -92,3 +92,33 @@ Template.calendar.onRendered( () => {
   	$( '#events-calendar').fullCalendar( 'refetchEvents');
   });
 });
+
+//////////////////////
+/// MESSAGE CENTER ///
+//////////////////////
+
+Template.calendar.events({
+  'submit form': function(event){
+    event.preventDefault();
+    messageItem = {
+      subject: event.target.subject.value,
+      from: event.target.from.value,
+      createdAt: new Date(),
+      to: event.target.sendto.value,
+      body: event.target.body.value,
+      readBy: []
+    };
+    Meteor.call('sendMessage', messageItem, (error) => {
+      if (error) {
+        console.log(error);
+        Bert.alert(error.reason, 'danger')
+      } else {
+        Bert.alert('Message sent!', 'success')
+      }  
+    });
+    event.target.subject.value = "";
+    event.target.from.value = "";
+    event.target.sendto.value = "";
+    event.target.body.value = "";
+  }
+})

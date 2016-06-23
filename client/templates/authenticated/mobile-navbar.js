@@ -21,7 +21,7 @@ Template.mobileNavbar.helpers({
 
 	'unread': function() {
 		let currentUser = Meteor.userId();
-		let unread = MessageList.find({readBy: {$nin: [currentUser]}}).count();
+		let unread = MessageList.find({$and: [{to: {$in: ['all', currentUser]}},{readBy: {$nin: [currentUser]}}]}).count();
 		if(unread > 0) {
 			return unread
 		}

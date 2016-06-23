@@ -13,5 +13,9 @@ if (Meteor.isServer) {
     Meteor.publish('messages', function(){
       return MessageList.find({},{sort: {createdAt: -1}});
     });
+
+    Meteor.publish('studentNames', function(){
+      return Meteor.users.find({},{fields: {profile: 1, username: 1}})
+    })
 });
 }

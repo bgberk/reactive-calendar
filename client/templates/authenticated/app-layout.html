@@ -1,15 +1,19 @@
 <template name="appLayout">
+<div class="inner-bg">
 	<div class="container">
+	{{#if currentUser}}
 		<div class="page-header">
 			<div class="row">
-			  <div class="span4">{{> loginButtons}}</div>
-			  <div class="span4"><img class="center-block" style="width: 100px" src="logo.png" /></div>
+			  <div class="span4 text-center">{{> loginButtons align="right"}}</div>
+			  <div class="span4"><a href="/"><img class="center-block" style="width: 100px" src="logo.png" /></a></div>
 			  <div class="span4"></div>
 			</div>
 		</div>
-	{{> mobileNavbar}}
+		{{> mobileNavbar}}
+	{{/if}}
 	{{> yield}}
 	</div>
+</div>
 	 <footer class="footer">
 	 <div class="container-fluid">
 	 	<br>

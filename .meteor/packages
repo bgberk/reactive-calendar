@@ -25,6 +25,9 @@ twbs:bootstrap
 houston:admin
 iron:router
 accounts-password
-accounts-ui
 peppelg:bootstrap-3-modal
+accounts-ui
+useraccounts:bootstrap
+useraccounts:iron-routing
 accounts-facebook
+service-configuration

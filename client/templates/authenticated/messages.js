@@ -5,7 +5,10 @@ Template.messages.onCreated( () => {
 
 Template.messages.helpers({
 	'messages': function() {
-		return MessageList.find();
+		var currentId = Meteor.userId();
+		var re = new RegExp (currentId);
+		console.log(re);
+		return MessageList.find({to: {$in: ['all', re]}}, {sort: {createdAt: -1}});
 	},
 });
 
@@ -39,6 +42,6 @@ Template.messageContent.events({
 
 Template.registerHelper('momentToHuman', (momentDate) => {
   if (momentDate) {
-    return moment(momentDate).format( 'MMMM Do, HH:MMa')
+    return moment(momentDate).format( 'MMMM Do, HH:mma')
   }
 })

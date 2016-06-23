@@ -1,3 +1,8 @@
+Template.guestDetails.onCreated(function(){
+	let template = Template.instance();
+	template.subscribe('studentNames')
+});
+
 Template.guestDetails.onRendered(function(){
 	var content = Template.currentData();
 	if (content) {
@@ -7,7 +12,11 @@ Template.guestDetails.onRendered(function(){
 		$.each(attendingUsers, function(index, value){
 			let userObj = (Meteor.users.findOne({_id: value}));
 			if(userObj) {
-				attendingNames.push(userObj.profile.name)
+				if (userObj.profile) {
+					attendingNames.push(userObj.profile.name)
+				} else if (userObj.username) {
+					attendingNames.push(userObj.username)
+				}
 			}
 		});
 		var string = attendingNames.join("</br>");
@@ -59,7 +68,11 @@ Template.guestDetails.helpers({
 
 	'maxLeft': function() {
 		var maxLeft = (this.max - this.attending.length + 1);
-		return maxLeft
+		if(maxLeft !== 0) {
+			return maxLeft
+		} else {
+			return "Add me to the waiting list; no"
+		}
 	}
 })
 

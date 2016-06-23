@@ -7,9 +7,11 @@
 		<small><a style="line-height: 34px" href="#" class="pull-left js-view-guests" data-toggle="popover">{{confirmed}} confirmed</a></small>
 		{{#if hasMax}}
 		<small style="line-height: 34px" class="pull-left">, {{maxLeft}} more left</small>
-		{{/if}}
 	  <button class="btn btn-success confirm">Coming!</button>
 		<small><input type="checkbox" value="">Save to my calendar</small>
+		{{else}}
+		<small style="line-height: 34px" class="pull-left"> - No more spots left, keep checking to see if it opens up!</small>
+		{{/if}}
 	{{/if}}
 {{else}}
 	<small><input type="checkbox" value="">Save to my calendar</small>
