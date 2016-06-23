@@ -7,7 +7,6 @@ Template.messages.helpers({
 	'messages': function() {
 		var currentId = Meteor.userId();
 		var re = new RegExp (currentId);
-		console.log(re);
 		return MessageList.find({to: {$in: ['all', re]}}, {sort: {createdAt: -1}});
 	},
 });

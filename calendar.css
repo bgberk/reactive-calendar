@@ -96,6 +96,11 @@ p[class="type-Meeting"] {
   cursor: pointer;
 }
 
+.popover {
+  font-family: 'DINRoundWeb';
+  font-size: 1em;
+}
+
 /* Background images */
 .inner-bg {
     background: url('lmh-background.jpg') no-repeat center center fixed;
